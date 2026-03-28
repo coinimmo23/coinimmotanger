@@ -5,7 +5,7 @@ import type { ListingPurpose, PropertyType } from "@/types";
 export const PURPOSE_OPTIONS: { value: ListingPurpose; label: string }[] = [
   { value: "vente",    label: "Acheter"   },
   { value: "location", label: "Louer"     },
-  { value: "vacances", label: "Vacances"  },
+  // { value: "vacances", label: "Vacances"  },
 ];
 
 
