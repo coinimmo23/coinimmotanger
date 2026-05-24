@@ -20,99 +20,102 @@ export default function HomeContent({ featured, total }: Props) {
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
       <section className="hero grain">
+  <div className="hero__media">
+    <video
+      autoPlay muted loop playsInline
+      className="hero__video"
+      poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
+    >
+      <source
+        src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38aaa35f6&profile_id=164&oauth2_token_id=57447761"
+        type="video/mp4"
+      />
+    </video>
+    <div className="hero__overlay" />
+  </div>
 
-        <div className="hero__media">
-          <video
-            autoPlay muted loop playsInline
-            className="hero__video"
-            poster="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
-          >
-            <source
-              src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38aaa35f6&profile_id=164&oauth2_token_id=57447761"
-              type="video/mp4"
-            />
-          </video>
-          <div className="hero__overlay" />
-        </div>
+  <div className="hero__stats-pill">
+    <span className="hero__stats-dot" />
+    <span>{total}+ {lang === 'fr' ? 'biens disponibles' : 'properties available'}</span>
+  </div>
 
-        <div className="hero__stats-pill">
-          <span className="hero__stats-dot" />
-          <span>{total}+ {lang === 'fr' ? 'biens disponibles' : 'properties available'}</span>
-        </div>
+  <div className="container hero__content">
+    <div className="hero__left">
+      <p className="eyebrow" style={{ color: 'var(--gold)', animationDelay: '0.2s' }}>
+        {lang === 'fr' ? 'Immobilier · Maroc du Nord' : 'Real Estate · Northern Morocco'}
+      </p>
 
-        <div className="container hero__content">
-          <div className="hero__left">
-            <p className="eyebrow" style={{ color: 'var(--gold)', animationDelay: '0.2s' }}>
-              {lang === 'fr' ? 'Immobilier · Maroc du Nord' : 'Real Estate · Northern Morocco'}
-            </p>
+      <h1 className="hero__title">
+        {lang === 'fr' ? (
+          <>
+            <span className="hero__title-line">L'exception</span>
+            <span className="hero__title-line hero__title-italic">à votre portée</span>
+          </>
+        ) : (
+          <>
+            <span className="hero__title-line">Excellence</span>
+            <span className="hero__title-line hero__title-italic">within your reach</span>
+          </>
+        )}
+      </h1>
 
-            <h1 className="hero__title">
-              {lang === 'fr' ? (
-                <>
-                  <span className="hero__title-line">L'exception</span>
-                  <span className="hero__title-line hero__title-italic">à votre portée</span>
-                </>
-              ) : (
-                <>
-                  <span className="hero__title-line">Excellence</span>
-                  <span className="hero__title-line hero__title-italic">within your reach</span>
-                </>
-              )}
-            </h1>
+      <p className="hero__sub">
+        {lang === 'fr'
+          ? 'Villas, appartements et maisons d\'exception au nord du Maroc. Une sélection rigoureuse pour chaque projet de vie.'
+          : 'Exceptional villas, apartments and homes in northern Morocco. A rigorous selection for every life project.'}
+      </p>
 
-            <p className="hero__sub">
-              {lang === 'fr'
-                ? 'Villas, appartements et maisons d\'exception au nord du Maroc. Une sélection rigoureuse pour chaque projet de vie.'
-                : 'Exceptional villas, apartments and homes in northern Morocco. A rigorous selection for every life project.'}
-            </p>
+      <div className="hero__actions">
+        <Link href="/vente" className="btn btn-gold">
+          {tr(t.home.heroCta, lang)}
+          <ArrowRight size={16} />
+        </Link>
+        <Link href="/recherche" className="btn btn-outline adv">
+          {lang === 'fr' ? 'Recherche avancée' : 'Advanced search'}
+        </Link>
+      </div>
+    </div>
 
-            <div className="hero__actions">
-              <Link href="/vente" className="btn btn-gold">
-                {tr(t.home.heroCta, lang)}
-                <ArrowRight size={16} />
-              </Link>
-              <Link href="/recherche" className="btn btn-outline adv">
-                {lang === 'fr' ? 'Recherche avancée' : 'Advanced search'}
-              </Link>
-            </div>
+    {/* --- NEW STAMP ADDED HERE --- */}
+    <div className="hero__stamp-wrapper">
+      <img 
+        src="/stamp.png" 
+        alt="20 ans d'expérience" 
+        className="hero__stamp"
+      />
+    </div>
+
+    <div className="hero__scroll">
+      <div className="hero__scroll-line" />
+      <span>{lang === 'fr' ? 'Défiler' : 'Scroll'}</span>
+    </div>
+  </div>
+
+  <div className="hero__categories">
+    <div className="container hero__categories-inner">
+      {[
+        {
+          href: '/vente',
+          label: tr(t.nav.buy, lang),
+          count: lang === 'fr' ? 'Appartements · Villas · Maisons · Terrains' : 'Apartments · Villas · Houses · Terrains',
+        },
+        {
+          href: '/location',
+          label: tr(t.nav.rent, lang),
+          count: lang === 'fr' ? 'Location longue durée' : 'Long-term rental',
+        },
+      ].map(({ href, label, count }) => (
+        <Link key={href} href={href} className="hero__cat">
+          <div>
+            <span className="hero__cat-label">{label}</span>
+            <span className="hero__cat-sub">{count}</span>
           </div>
-
-          <div className="hero__scroll">
-            <div className="hero__scroll-line" />
-            <span>{lang === 'fr' ? 'Défiler' : 'Scroll'}</span>
-          </div>
-        </div>
-
-        <div className="hero__categories">
-          <div className="container hero__categories-inner">
-            {[
-              {
-                href: '/vente',
-                label: tr(t.nav.buy, lang),
-                count: lang === 'fr' ? 'Appartements · Villas · Maisons · Terrains' : 'Apartments · Villas · Houses · Terrains',
-              },
-              {
-                href: '/location',
-                label: tr(t.nav.rent, lang),
-                count: lang === 'fr' ? 'Location longue durée' : 'Long-term rental',
-              },
-              // {
-              //   href: '/vacances',
-              //   label: tr(t.nav.vacation, lang),
-              //   count: lang === 'fr' ? 'Séjours & courts séjours' : 'Stays & short-term rentals',
-              // },
-            ].map(({ href, label, count }) => (
-              <Link key={href} href={href} className="hero__cat">
-                <div>
-                  <span className="hero__cat-label">{label}</span>
-                  <span className="hero__cat-sub">{count}</span>
-                </div>
-                <ArrowUpRight size={16} className="hero__cat-arrow" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+          <ArrowUpRight size={16} className="hero__cat-arrow" />
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ══ INTRO ═════════════════════════════════════════════════════════════ */}
       <section className="intro">
@@ -477,6 +480,59 @@ export default function HomeContent({ featured, total }: Props) {
         .city-card:hover .city-card__cta { opacity: 1; transform: translateY(0); }
         .adv{
         color:white}
+
+
+
+        .hero__content {
+  position: relative; 
+}
+
+/* Stamp Positioning & Animation */
+.hero__stamp-wrapper {
+  position: absolute;
+  right: 15%;
+  top: 15%;
+  width: 180px;
+  height: 180px;
+  z-index: 10;
+  opacity: 0.9;
+  pointer-events: none; /* Ensures the user can still click anything underneath it */
+  animation: spinStamp 30s linear infinite; /* Remove this line if you don't want it to spin */
+}
+
+.hero__stamp {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Keyframes for the slow rotation */
+@keyframes spinStamp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero__stamp-wrapper {
+    width: 110px;
+    height: 110px;
+    top: -10px; 
+    right: 40%;
+  }
+}
+
+
+
+
+
+
+
+
       `}</style>
     </div>
   )
