@@ -132,7 +132,7 @@ export default function HomeContent({ featured, total }: Props) {
           <div className="intro__right reveal reveal-delay-2">
             <p className="intro__text">
               {lang === 'fr'
-                ? 'Nous sélectionnons chaque bien avec soin, pour garantir une expérience immobilière à la hauteur de vos attentes. Que vous cherchiez à acheter, louer ou passer des vacances au bord de la mer, nous avons le bien qu\'il vous faut.'
+                ? 'Coin Immo vous accompagne à Tanger dans tous vos projets immobiliers, avec plus de 20 ans d’expérience dans le secteur. Que vous souhaitiez acheter, vendre, investir ou confier la gestion locative de votre bien, l’agence met à votre disposition son expertise et sa parfaite connaissance du marché local.'
                 : 'We carefully select every property to ensure a real estate experience that meets your expectations. Whether you\'re looking to buy, rent, or spend a vacation by the sea, we have the right property for you.'}
             </p>
             <div className="intro__stats">
