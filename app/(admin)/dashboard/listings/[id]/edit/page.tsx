@@ -29,6 +29,17 @@ export default async function EditListingPage({
         .page-header { margin-bottom: 28px; }
         .page-title  { font-family: 'Playfair Display', serif; font-size: 28px; color: #f0f0f0; margin-bottom: 4px; }
         .page-sub    { font-size: 14px; color: #555; }
+
+        @media (max-width: 768px) {
+          .page { max-width: 100%; }
+          .page-header { margin-bottom: 20px; }
+          .page-title  { font-size: 24px; }
+          .page-sub    { font-size: 13px; }
+        }
+        @media (max-width: 480px) {
+          .page-title  { font-size: 20px; }
+          .page-sub    { font-size: 12px; }
+        }
       `}</style>
     </div>
   );

@@ -185,11 +185,61 @@ export default async function DashboardPage() {
           .dp__stats { grid-template-columns: repeat(3,1fr); }
         }
 
+        /* ── Tablet ── */
+        @media (max-width: 1024px) {
+          .dp__title { font-size: 24px; }
+          .dp__stat-val { font-size: 26px; }
+          .dp__stat { padding: 16px 16px 14px; }
+        }
+
+        /* ── Small tablet ── */
+        @media (max-width: 768px) {
+          .dp__header { padding-bottom: 20px; margin-bottom: 20px; }
+          .dp__title { font-size: 22px; }
+          .dp__cta   { padding: 8px 16px; font-size: 10px; }
+          .dp__stats { grid-template-columns: repeat(3, 1fr); margin-bottom: 20px; }
+          .dp__stat  { padding: 14px 14px 12px; }
+          .dp__stat-val   { font-size: 22px; }
+          .dp__stat-label { font-size: 9px; }
+          .dp__grid  { grid-template-columns: 1fr; gap: 16px; }
+          .dp__row   { padding: 11px 14px; }
+          .dp__row-title { font-size: 12px; }
+          .dp__row-meta  { font-size: 10px; }
+          .dp__row-price { font-size: 11px; }
+          .dp__panel-hd  { padding: 12px 14px; }
+          .dp__avatar    { width: 28px; height: 28px; font-size: 11px; }
+        }
+
+        /* ── Large phone ── */
+        @media (max-width: 600px) {
+          .dp__stats { grid-template-columns: repeat(2, 1fr); }
+          .dp__row   { flex-direction: column; align-items: flex-start; gap: 8px; }
+          .dp__row-right { flex-direction: row; align-items: center; gap: 8px; }
+          .dp__row--msg  { flex-direction: row; flex-wrap: wrap; }
+          .dp__msg-time  { width: 100%; text-align: right; }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 480px) {
+          .dp__header { flex-direction: column; align-items: flex-start; gap: 14px; }
+          .dp__cta    { width: 100%; justify-content: center; }
+          .dp__title  { font-size: 20px; }
+          .dp__eyebrow { font-size: 8px; }
+          .dp__stats  { grid-template-columns: repeat(2, 1fr); }
+          .dp__stat   { padding: 12px 10px 10px; }
+          .dp__stat-val   { font-size: 20px; }
+          .dp__stat-label { font-size: 8px; letter-spacing: .06em; }
+          .dp__stat-icon  { margin-bottom: 8px; }
+          .dp__panel-hd   { flex-direction: column; align-items: flex-start; gap: 6px; }
+          .dp__row    { padding: 10px 12px; }
+          .dp__row-title { white-space: normal; }
+          .dp__empty  { padding: 24px 14px; font-size: 11px; }
+          .dp__badge  { font-size: 8px; padding: 2px 6px; }
+          .dp__count  { font-size: 8px; padding: 1px 5px; }
+        }
         .dp__grid {
           display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
         }
-        @media (max-width: 860px) { .dp__grid { grid-template-columns: 1fr; } }
-
         .dp__panel {
           background: var(--surface); border: 1px solid var(--border);
           overflow: hidden;

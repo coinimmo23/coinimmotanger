@@ -209,9 +209,41 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* ── Tablet ── */
+        @media (max-width: 1024px) {
+          .shell__main { padding: 32px 28px; max-width: 100%; }
+          .adm-title   { font-size: 22px; }
+          .adm-stat__value { font-size: 26px; }
+          .adm-stat { padding: 16px 18px; }
+        }
+
+        /* ── Small tablet / landscape phone ── */
         @media (max-width: 768px) {
           .shell__right  { margin-left: 0; }
-          .shell__main   { padding: 24px 20px; }
+          .shell__main   { padding: 60px 16px 24px; max-width: 100%; }
+          .adm-header    { gap: 12px; margin-bottom: 24px; padding-bottom: 18px; }
+          .adm-title     { font-size: 20px; }
+          .adm-sub       { font-size: 12px; }
+          .adm-btn, .adm-btn-ghost { padding: 8px 14px; font-size: 11px; }
+          .adm-panel-header { padding: 12px 14px; }
+          .adm-panel-title  { font-size: 9px; }
+          .adm-table th  { padding: 10px 12px; font-size: 8px; }
+          .adm-table td  { padding: 10px 12px; font-size: 12px; }
+          .adm-stat__value { font-size: 22px; }
+          .adm-stat__label { font-size: 8px; }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 480px) {
+          .shell__main   { padding: 16px 12px; }
+          .adm-header    { flex-direction: column; align-items: flex-start; gap: 14px; }
+          .adm-btn       { width: 100%; justify-content: center; }
+          .adm-title     { font-size: 18px; }
+          .adm-panel-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+          .adm-table-wrap { border-left: none; border-right: none; }
+          .adm-stat { padding: 14px 12px; }
+          .adm-stat__value { font-size: 20px; }
+          .adm-empty     { padding: 48px 20px; font-size: 12px; }
         }
       `}</style>
     </>

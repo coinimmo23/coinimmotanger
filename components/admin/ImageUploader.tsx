@@ -213,6 +213,34 @@ export default function ImageUploader({ listingId, existingImages }: Props) {
         }
         .iu-thumb:hover .iu-delete { opacity: 1; }
         .iu-delete:hover { background: #e05252; }
+
+        /* ── Small tablet ── */
+        @media (max-width: 768px) {
+          .iu-dropzone { padding: 28px 16px; }
+          .iu-main     { font-size: 13px; }
+          .iu-sub      { font-size: 11px; }
+          .iu-grid     { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+        }
+
+        /* ── Large phone ── */
+        @media (max-width: 600px) {
+          .iu-dropzone { padding: 24px 14px; }
+          .iu-grid     { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
+          .iu-cover-badge { font-size: 9px; padding: 2px 6px; }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 480px) {
+          .iu-dropzone { padding: 20px 12px; border-radius: 8px; }
+          .iu-idle     { gap: 8px; }
+          .iu-main     { font-size: 12px; }
+          .iu-sub      { font-size: 10px; }
+          .iu-grid     { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+          .iu-thumb    { border-radius: 6px; }
+          /* Always show delete on touch devices */
+          .iu-delete   { opacity: 1; }
+          .iu-error    { padding: 8px 12px; font-size: 12px; border-radius: 6px; }
+        }
       `}</style>
     </div>
   );

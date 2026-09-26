@@ -310,6 +310,57 @@ function handleDelete(id: string) {
           from { opacity:0; transform:translateY(10px); }
           to   { opacity:1; transform:translateY(0); }
         }
+
+        /* ── Tablet ── */
+        @media (max-width: 1024px) {
+          .lp__title { font-size: 24px; }
+          .lp__table th { padding: 10px 12px; }
+          .lp__table td { padding: 11px 12px; }
+          .lp__filter-search { min-width: 180px; }
+        }
+
+        /* ── Small tablet ── */
+        @media (max-width: 768px) {
+          .lp__header { padding-bottom: 20px; margin-bottom: 18px; }
+          .lp__title  { font-size: 22px; }
+          .lp__cta    { padding: 8px 16px; font-size: 10px; }
+          .lp__filters { gap: 6px; }
+          .lp__filter-input  { font-size: 11px; padding: 7px 10px; height: 34px; }
+          .lp__filter-search { min-width: 100%; flex-basis: 100%; }
+          .lp__table th { padding: 9px 10px; font-size: 8px; }
+          .lp__table td { padding: 10px 10px; font-size: 12px; }
+          .lp__td-title { min-width: 160px; }
+          .lp__action   { width: 28px; height: 28px; }
+        }
+
+        /* ── Large phone ── */
+        @media (max-width: 600px) {
+          .lp__filters { flex-direction: column; }
+          .lp__filter-input  { width: 100%; }
+          .lp__filter-search { min-width: 0; }
+          .lp__filter-clear  { width: 100%; justify-content: center; }
+          .lp__table { font-size: 12px; }
+          .lp__td-title { min-width: 130px; }
+          .lp__td-ref   { font-size: 11px; }
+          .lp__td-price { font-size: 11px; }
+          .lp__badge    { font-size: 8px; padding: 2px 6px; }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 480px) {
+          .lp__header { flex-direction: column; align-items: flex-start; gap: 14px; }
+          .lp__cta    { width: 100%; justify-content: center; }
+          .lp__title  { font-size: 20px; }
+          .lp__eyebrow { font-size: 8px; }
+          .lp__table-wrap { border-left: none; border-right: none; }
+          .lp__table th { padding: 8px 8px; }
+          .lp__table td { padding: 9px 8px; }
+          .lp__td-title { min-width: 100px; }
+          .lp__actions  { gap: 2px; }
+          .lp__action   { width: 26px; height: 26px; }
+          .lp__empty    { padding: 48px 20px; }
+          .lp__loading  { padding: 40px 20px; }
+        }
       `}</style>
     </div>
   );

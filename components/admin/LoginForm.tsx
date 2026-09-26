@@ -255,6 +255,30 @@ export default function LoginForm() {
   display: inline-block;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Small tablet ── */
+@media (max-width: 768px) {
+  .login-card { padding: 40px 32px; }
+  .login-title { font-size: 24px; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .login-card {
+    max-width: 100%;
+    margin: 0 16px;
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+  .login-title    { font-size: 22px; }
+  .login-subtitle { font-size: 12px; }
+  .login-diamond  { font-size: 24px; margin-bottom: 12px; }
+  .login-header   { margin-bottom: 28px; }
+  .field-label    { font-size: 11px; }
+  .field-input    { padding: 11px 12px; font-size: 13px; }
+  .login-btn      { padding: 12px; font-size: 13px; }
+  .login-error    { font-size: 12px; padding: 8px 12px; }
+}
       `}</style>
     </div>
   );

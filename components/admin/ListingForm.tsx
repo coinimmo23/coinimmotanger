@@ -578,6 +578,54 @@ export default function ListingForm({ listing }: Props) {
   color: var(--gold);
 }
 
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .lf-root { max-width: 100%; }
+  .lf-section { padding: 22px; }
+  .lf-section-title { font-size: 16px; }
+}
+
+/* ── Small tablet ── */
+@media (max-width: 768px) {
+  .lf-section { padding: 18px; margin-bottom: 12px; border-radius: 10px; }
+  .lf-section-title { font-size: 15px; margin-bottom: 16px; padding-bottom: 10px; }
+  .lf-input   { padding: 10px 12px; font-size: 13px; }
+  .lf-label   { font-size: 10px; }
+  .lf-row     { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .lf-row-5   { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .amenity-chip { padding: 6px 12px; font-size: 11px; }
+  .lf-actions { gap: 10px; }
+  .btn-ghost, .btn-gold { padding: 10px 16px; font-size: 13px; }
+  .lf-lang-block { padding: 16px 16px 4px; }
+}
+
+/* ── Large phone ── */
+@media (max-width: 600px) {
+  .lf-row   { grid-template-columns: 1fr; gap: 14px; }
+  .lf-row-5 { grid-template-columns: repeat(2, 1fr); }
+  .lf-actions { flex-direction: column-reverse; }
+  .btn-ghost, .btn-gold { width: 100%; text-align: center; justify-content: center; }
+  .amenities-grid { gap: 6px; }
+  .amenity-chip { padding: 6px 10px; font-size: 11px; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .lf-section { padding: 14px; margin-bottom: 10px; border-radius: 8px; }
+  .lf-section-title { font-size: 14px; margin-bottom: 14px; }
+  .lf-input   { padding: 9px 10px; font-size: 13px; border-radius: 6px; }
+  .lf-textarea { min-height: 80px; }
+  .lf-label   { font-size: 9px; }
+  .lf-row-5   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .lf-lang-block { padding: 14px 12px 4px; border-radius: 8px; }
+  .lf-lang-tag { font-size: 9px; padding: 2px 8px; }
+  .toggle-label { font-size: 13px; }
+  .lf-error, .lf-success { padding: 10px 12px; font-size: 12px; border-radius: 6px; }
+  .lf-hint  { font-size: 11px; }
+  .btn-ghost, .btn-gold { padding: 11px 14px; font-size: 13px; border-radius: 6px; }
+  .lf-reference-display { font-size: 14px; }
+}
+
       `}</style>
     </div>
   );

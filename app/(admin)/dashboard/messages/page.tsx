@@ -184,6 +184,49 @@ export default async function MessagesPage() {
   from { opacity:0; transform:translateY(10px); }
   to   { opacity:1; transform:translateY(0); }
 }
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .mp { max-width: 100%; }
+  .mp__title { font-size: 24px; }
+  .mp__card  { padding: 18px 20px; }
+}
+
+/* ── Small tablet ── */
+@media (max-width: 768px) {
+  .mp__header { padding-bottom: 20px; margin-bottom: 20px; }
+  .mp__title  { font-size: 22px; }
+  .mp__card   { padding: 16px; }
+  .mp__avatar { width: 32px; height: 32px; font-size: 12px; }
+  .mp__name   { font-size: 13px; }
+  .mp__body   { font-size: 13px; line-height: 1.65; }
+  .mp__meta   { gap: 10px; }
+  .mp__meta-item { font-size: 11px; }
+}
+
+/* ── Large phone ── */
+@media (max-width: 600px) {
+  .mp__card-hd  { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .mp__hd-right { align-self: flex-end; }
+  .mp__meta     { flex-direction: column; gap: 8px; }
+  .mp__reply    { width: 100%; text-align: center; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .mp__title    { font-size: 20px; }
+  .mp__eyebrow  { font-size: 8px; }
+  .mp__card     { padding: 14px 12px; }
+  .mp__card-hd  { margin-bottom: 10px; }
+  .mp__sender   { gap: 8px; }
+  .mp__avatar   { width: 28px; height: 28px; font-size: 11px; }
+  .mp__name     { font-size: 12px; }
+  .mp__time     { font-size: 10px; }
+  .mp__body     { font-size: 12px; margin-bottom: 14px; }
+  .mp__reply    { font-size: 10px; padding: 6px 12px; }
+  .mp__empty    { padding: 48px 20px; }
+  .mp__list     { gap: 8px; }
+}
       `}</style>
     </div>
   );
